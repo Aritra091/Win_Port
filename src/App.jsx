@@ -232,17 +232,17 @@ const App = () => {
       desc: 'A full-stack music streaming web app.',
       longDesc: 'A full-stack music streaming web app built with Django. Symphonia delivers a seamless user experience with a robust backend, featuring a dynamically updated trending songs section, a "Listen Later" option, a smooth built-in audio player, and an offline download feature for uninterrupted music enjoyment.',
       tech: ['HTML', 'CSS(Bootstrap)', 'JavaScript', 'Django(Python)', 'SQLite', 'Git'],
-      link: 'https://example.com/portfolio-os',
+      link: 'https://symphonia.onrender.com/',
       image: 'src/assets/Symphonia.png'
     },
     {
       id: 'p2',
-      title: 'E-Commerce Core',
-      desc: 'A robust headless commerce engine with real-time inventory management.',
-      longDesc: 'Built to handle high-traffic sales events. Uses a microservices architecture to separate cart logic from user authentication and payment processing.',
-      tech: ['Node.js', 'PostgreSQL', 'Redis'],
-      link: 'https://example.com/ecommerce',
-      image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=400&q=80'
+      title: 'Voxis',
+      desc: 'A full-stack multilingual AI assistant that understands text, voice, and image inputs',
+      longDesc: 'A full-stack multilingual AI assistant that understands text, voice, and image inputs. VOXIS delivers real-time, context-aware responses with seamless multimodal interaction. It ensures inclusive accessibility for all users, making smart assistance effortless and universal.',
+      tech: ['Django(Python)', 'SQLite', 'Git', 'Grok(API)', 'GTTS'],
+      link: 'https://voxis.onrender.com/',
+      image: 'src/assets/Voxis.png'
     },
     {
       id: 'p3',
