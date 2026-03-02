@@ -39,6 +39,9 @@ import {
   Brain  
 } from 'lucide-react';
 
+import Wallpaper from './assets/wallpaper.jpg';
+import SymphoniaImg from './assets/Symphonia.png';
+
 // --- TERMINAL COMPONENT ---
 const TerminalEmulator = () => {
   const [history, setHistory] = useState([
@@ -235,7 +238,7 @@ const App = () => {
       longDesc: 'A full-stack music streaming web app built with Django. Symphonia delivers a seamless user experience with a robust backend, featuring a dynamically updated trending songs section, a "Listen Later" option, a smooth built-in audio player, and an offline download feature for uninterrupted music enjoyment.',
       tech: ['HTML', 'CSS(Bootstrap)', 'JavaScript', 'Django(Python)', 'SQLite', 'Git'],
       link: 'https://symphonia.onrender.com/',
-      image: 'src/assets/Symphonia.png'
+      image: SymphoniaImg
     },
     {
       id: 'p2',
@@ -793,7 +796,7 @@ const App = () => {
   return (
     <div
       className="h-screen w-screen bg-[#0078d7] bg-cover bg-center overflow-hidden flex flex-col select-none relative font-sans"
-      style={{ backgroundImage: `url('src/assets/wallpaper.jpg')` }}
+      style={{ backgroundImage: `url(${Wallpaper})` }}
     >
       {/* Desktop Icons */}
       <div className="flex-1 p-2 grid grid-flow-col grid-rows-6 gap-2 justify-start w-fit">
