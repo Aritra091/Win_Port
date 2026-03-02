@@ -32,9 +32,11 @@ import {
   ArrowLeft,
   Database,
   Monitor,
-  Briefcase,      // ✅ ADD THIS
-  Building2,      // ✅ ADD THIS
-  MapPin
+  Briefcase,      
+  Building2,      
+  MapPin,
+  GitBranch,   
+  Brain  
 } from 'lucide-react';
 
 // --- TERMINAL COMPONENT ---
@@ -300,14 +302,14 @@ const App = () => {
   ];
 
   const apps = [
-  { id: 'about', title: 'Developer Properties', icon: <User size={24} className="text-blue-500" /> },
-  { id: 'projects', title: 'Projects', icon: <Folder size={24} className="text-yellow-500" /> },
-  { id: 'experience', title: 'Career Log', icon: <Briefcase size={24} className="text-orange-500" /> },
-  { id: 'skills', title: 'System Performance', icon: <Cpu size={24} className="text-emerald-500" /> },
-  { id: 'terminal', title: 'Command Prompt', icon: <Terminal size={24} className="text-white" />, color: 'bg-black' },
-  { id: 'games', title: 'Snake Game', icon: <Gamepad2 size={24} className="text-purple-500" /> },
-  { id: 'contact', title: 'Contact Hub', icon: <User size={24} className="text-orange-400" /> },
-];
+    { id: 'about', title: 'Developer Properties', icon: <User size={24} className="text-blue-500" /> },
+    { id: 'projects', title: 'Projects', icon: <Folder size={24} className="text-yellow-500" /> },
+    { id: 'experience', title: 'Career Log', icon: <Briefcase size={24} className="text-orange-500" /> },
+    { id: 'skills', title: 'System Performance', icon: <Cpu size={24} className="text-emerald-500" /> },
+    { id: 'terminal', title: 'Command Prompt', icon: <Terminal size={24} className="text-white" />, color: 'bg-black' },
+    { id: 'games', title: 'Snake Game', icon: <Gamepad2 size={24} className="text-purple-500" /> },
+    { id: 'contact', title: 'Contact Hub', icon: <User size={24} className="text-orange-400" /> },
+  ];
 
   const toggleWindow = (appId) => {
     if (openWindows.includes(appId)) {
@@ -540,7 +542,7 @@ const App = () => {
                 <div key={exp.id} className="relative flex flex-col md:flex-row gap-8">
                   {/* Timeline dot */}
                   <div className="absolute left-8 -translate-x-1/2 w-4 h-4 rounded-full border-4 border-white shadow-sm z-10 hidden md:block" style={{ backgroundColor: idx === 0 ? '#3b82f6' : '#cbd5e1', top: '24px' }}></div>
-                  
+
                   <div className="hidden md:block w-32 shrink-0 pt-6 text-right">
                     <span className="text-xs font-bold text-slate-400 uppercase tracking-tighter">{exp.line_period}</span>
                   </div>
@@ -588,35 +590,96 @@ const App = () => {
         </div>
       );
       case 'skills': return (
-        <div className="p-6 bg-gray-50 h-full overflow-y-auto">
-          <div className="mb-6">
-            <h3 className="text-lg font-semibold text-gray-800 flex items-center gap-2">
-              <Layers size={20} className="text-emerald-600" /> Technical Ecosystem
+        <div className="p-8 bg-gradient-to-br from-gray-50 to-gray-100 h-full overflow-y-auto">
+
+          <div className="mb-8">
+            <h3 className="text-2xl font-bold text-gray-800 flex items-center gap-3">
+              <Layers size={22} className="text-emerald-600" />
+              Technical Stack Overview
             </h3>
-            <p className="text-xs text-gray-500">Resource allocation across modern frameworks.</p>
+            <p className="text-sm text-gray-500 mt-1">
+              Full-stack + AI ecosystem powering scalable systems.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
             {[
-              { name: 'React Architecture', level: '95%', color: 'bg-blue-500', desc: 'Hooks, Context, Performance Optimization', icon: <Zap size={16} /> },
-              { name: 'Node.js Runtime', level: '88%', color: 'bg-emerald-500', desc: 'Express, Microservices, REST APIs', icon: <Cpu size={16} /> },
-              { name: 'Cloud Security', level: '82%', color: 'bg-purple-500', desc: 'Azure AD, JWT, OAuth 2.0', icon: <ShieldCheck size={16} /> },
-              { name: 'TypeScript Core', level: '90%', color: 'bg-sky-600', desc: 'Type Safety, Generics, OOP', icon: <Code size={16} /> }
+              {
+                name: 'Frontend Engineering',
+                level: '95%',
+                color: 'bg-blue-500',
+                desc: 'HTML5 • CSS3 • JavaScript • TypeScript • React • Next.js • Angular • Tailwind • Bootstrap',
+                icon: <Zap size={18} />
+              },
+              {
+                name: 'Backend Development',
+                level: '92%',
+                color: 'bg-emerald-500',
+                desc: 'Node.js • Express • Python • Django • PHP • REST APIs',
+                icon: <Cpu size={18} />
+              },
+              {
+                name: 'Programming Languages',
+                level: '90%',
+                color: 'bg-indigo-500',
+                desc: 'Java • C • C++ • Python • TypeScript • JavaScript',
+                icon: <Code size={18} />
+              },
+              {
+                name: 'Databases & APIs',
+                level: '88%',
+                color: 'bg-yellow-500',
+                desc: 'MongoDB • PostgreSQL • GraphQL',
+                icon: <Database size={18} />
+              },
+              {
+                name: 'DevOps & Tools',
+                level: '85%',
+                color: 'bg-gray-600',
+                desc: 'Git • GitHub • Linux',
+                icon: <GitBranch size={18} />
+              },
+              {
+                name: 'AI & Computer Vision',
+                level: '84%',
+                color: 'bg-purple-600',
+                desc: 'TensorFlow • OpenCV',
+                icon: <Brain size={18} />
+              }
             ].map((skill, idx) => (
-              <div key={idx} className="bg-white p-4 border border-gray-200 shadow-sm hover:shadow-md transition-shadow group rounded-xl">
-                <div className="flex justify-between items-start mb-2">
-                  <div className="p-2 bg-gray-100 rounded group-hover:bg-blue-50 transition-colors">
-                    {React.cloneElement(skill.icon, { className: skill.color.replace('bg-', 'text-') })}
+              <div
+                key={idx}
+                className="bg-white/80 backdrop-blur-lg p-5 border border-gray-200 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group"
+              >
+                <div className="flex justify-between items-start mb-3">
+                  <div className="p-3 bg-gray-100 rounded-xl group-hover:scale-110 transition-transform">
+                    {React.cloneElement(skill.icon, {
+                      className: skill.color.replace('bg-', 'text-')
+                    })}
                   </div>
-                  <span className="text-xl font-bold text-gray-300">{skill.level}</span>
+                  <span className="text-2xl font-bold text-gray-300">
+                    {skill.level}
+                  </span>
                 </div>
-                <h4 className="font-bold text-gray-800 text-sm">{skill.name}</h4>
-                <p className="text-[10px] text-gray-400 mb-3 uppercase tracking-wider">{skill.desc}</p>
-                <div className="h-1 w-full bg-gray-100 rounded-full overflow-hidden">
-                  <div className={`h-full ${skill.color}`} style={{ width: skill.level }}></div>
+
+                <h4 className="font-semibold text-gray-800 text-base">
+                  {skill.name}
+                </h4>
+
+                <p className="text-xs text-gray-500 mt-1 mb-4 leading-relaxed">
+                  {skill.desc}
+                </p>
+
+                <div className="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
+                  <div
+                    className={`h-full ${skill.color} transition-all duration-700`}
+                    style={{ width: skill.level }}
+                  ></div>
                 </div>
               </div>
             ))}
+
           </div>
         </div>
       );
